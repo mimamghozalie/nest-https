@@ -4,4 +4,4 @@ nano /etc/nginx/nginx.conf
 
 # Add under 
 # include sites-enabled/*
-include /homde/*/config/nginx/nginx.conf;
+include /home/*/config/nginx/nginx.conf;
