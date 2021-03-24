@@ -1,10 +1,28 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { SystemDatabaseModule } from '@system/database/database.module';
+import { AppApiModule } from './api/app-api.module';
+import { SystemConfigModule } from './system/config/config.module';
+import { SystemThrottlerModule } from './system/throttler/throttler.module';
 
 @Module({
-  imports: [],
-  controllers: [AppController],
-  providers: [AppService],
+  imports: [
+    /**
+     * System
+     */
+    SystemConfigModule,
+    SystemThrottlerModule,
+    // SystemDatabaseModule,
+
+    /**
+     * Libs
+     */
+
+    /**
+     * Application
+     */
+    AppApiModule
+  ],
+  controllers: [],
+  providers: [],
 })
-export class AppModule {}
+export class AppModule { }
