@@ -12,8 +12,8 @@ export class AuthService {
     ) { }
 
     async signPayload(payload: any) {
-        return await sign(payload, this.config.get('secret_key'), {
-            expiresIn: this.config.get('token_exp')
+        return await sign(payload, this.config.get<string>('SECRET_KEY'), {
+            expiresIn: this.config.get<string>('TOKEN_EXP')
         })
     }
 
